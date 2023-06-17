@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function custom_module_schema() {
+  $schema['custom_table'] = [
+    'description' => 'The base table for custom_module.',
+    'fields' => [
+      'id' => [
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'produit' => [
+        'description' => 'Product',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'aire_therapeutique' => [
+        'description' => 'Therapeutic Area',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'department' => [
+        'description' => 'District',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'rmr_adresse_email' => [
+        'description' => 'MSL Email',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+      'backup_adresse_email' => [
+        'description' => 'Backup Email',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}
